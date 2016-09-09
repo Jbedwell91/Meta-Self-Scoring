@@ -21,13 +21,6 @@ jsPsych.plugins["pcllab-short-answer"] = (function () {
 
     var plugin = {};
 
-      preamble: {
-        type: [jsPsych.plugins.parameterType.STRING],
-        default: '',
-        no_function: false,
-        description: ''
-      }      
-
     plugin.trial = function (display_element, trial) {
 
         // set default values for parameters
@@ -52,13 +45,6 @@ jsPsych.plugins["pcllab-short-answer"] = (function () {
         } else {
             show();
         }
-
-         var preamble_id_name = _join(plugin_id_name, 'preamble');
-    $trial_form.append($('<div>', {
-      "id": preamble_id_name,
-      "class": preamble_id_name
-    }));
-    $('#' + preamble_id_name).html(trial.preamble);
 
 
         function show() {
